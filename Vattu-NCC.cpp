@@ -9,6 +9,43 @@
 
 using namespace std;
 
+class Nhacungcap : public Entity{
+	private :
+		string tenncc, diachi, vattucungcap;
+	public :
+		void Nhap() override{
+			cout << "Ma NCC:"; getline(cin, ma);
+			cout << "Dia chi NCC:"; getline(cin, diachi);
+			cout << "Ten NCC:"; getline(cin, tenncc);
+			cout << "Vat tu cung cap:"; getline(cin, vattucungcap);
+		}
+		
+		void Capnhat() override{
+			diachi = NhapChucapnhat("Sua ten NCC", tenncc);
+			tenncc = NhapChucapnhat("Sua dia chi", diachi);
+			vattucungcap = NhapChucapnhat("Sua vat tu cung cap", vattucungcap);
+		}
+		
+		void xuat() const override {
+			cout << left << setw(10) << ma << "| "
+			<< setw(20) << diachi << "| "
+			<< setw(20) << tenncc << "| "
+			<< setw(20) << vattucungcap << "| " << endl;
+		}
+		
+		string toFile() const override{
+			return ma + "|" + diachi + "|" + tenncc + "|" + vattucungcap;
+		}
+		
+		void fromFile(const string& line) override{
+			stringstream ss(line);
+			getline(ss, ma, '|');
+			getline(ss, diachi, '|');
+			getline(ss, tenncc, '|');
+			getline(ss, vattucungcap, '|');
+		} 
+};
+
 class Vattu : public Entity{
 	private:
 		string ten, donvi, maNCC;
@@ -69,41 +106,4 @@ class Vattu : public Entity{
                     cout << "Khong tim thay nha cung cap co ma:" << maNCC << " trong he thong"; 
                 }
             }
-};
-
-class Nhacungcap : public Entity{
-	private :
-		string tenncc, diachi, vattucungcap;
-	public :
-		void Nhap() override{
-			cout << "Ma NCC:"; getline(cin, ma);
-			cout << "Dia chi NCC:"; getline(cin, diachi);
-			cout << "Ten NCC:"; getline(cin, tenncc);
-			cout << "Vat tu cung cap:"; getline(cin, vattucungcap);
-		}
-		
-		void Capnhat() override{
-			diachi = NhapChucapnhat("Sua ten NCC", tenncc);
-			tenncc = NhapChucapnhat("Sua dia chi", diachi);
-			vattucungcap = NhapChucapnhat("Sua vat tu cung cap", vattucungcap);
-		}
-		
-		void xuat() const override {
-			cout << left << setw(10) << ma << "| "
-			<< setw(20) << diachi << "| "
-			<< setw(20) << tenncc << "| "
-			<< setw(20) << vattucungcap << "| " << endl;
-		}
-		
-		string toFile() const override{
-			return ma + "|" + diachi + "|" + tenncc + "|" + vattucungcap;
-		}
-		
-		void fromFile(const string& line) override{
-			stringstream ss(line);
-			getline(ss, ma, '|');
-			getline(ss, diachi, '|');
-			getline(ss, tenncc, '|');
-			getline(ss, vattucungcap, '|');
-		} 
 };
