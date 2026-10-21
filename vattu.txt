@@ -1,0 +1,10 @@
+VT01|Cap quang|14500|10000|met
+VT02|Cap dong truc|10000|2500|met
+VT03|Cap dien cap nguon thiet bi|6000|10000|met
+VT04|Dau mang RJ45|3000|200|cai
+VT05|Hop phoi quang |250000|80|bo
+VT06|Tu rack treo tuong|1000000|12|cai
+VT07|Router Wifi|700000|60|cai
+VT08|Switch PoE 8 port|800000|44|cai
+VT09|Bo chia quang PLC 1:8|200000|60|bo
+VT10|Access Point Wifi|1200000|35|Cai
