@@ -103,7 +103,7 @@ class Vattu : public Entity{
                     cout << "---Vat tu tu nha cung cap---\n";
                     da->xuat();
                 }else{
-                    cout << "Khong tim thay nha cung cap co ma:" << maNCC << " trong he thong"; 
+                    cout << "Khong tim thay nha cung cap trong he thong" << endl; 
                 }
             }
 };
