@@ -1,0 +1,10 @@
+NCC01|69 Van Lang|Cong ty TNHH VTpost|Cap quang
+NCC02|102 Tran Huy Lieu|Cong ty TNHH CAP|Cap dong truc
+NCC03|20 Nguyen Trai|Cong ty TNHH Dien Tu |Cap dien cap nguon thiet bi
+NCC04|170 Tran Phu|Cong ty TNHH Hardware |Dau mang RJ45
+NCC05|200 To Huu|Cong ty vat tu VT |Hop phoi quang
+NCC06|250 Nguyen Hue|Cong ty TNHH SXVT|Tu rack treo tuong
+NCC07|1 Nguyen Xien|Cong ty vat tu NX|Router Wifi
+NCC08|230 Thuong Dinh|Cong ty vat tu Thuong Dinh|Switch PoE 8 port
+NCC09|300 Truong Trinh|Xuong san xuat vat lieu Hoa Phat|Bo chia quang PLC 1:8
+NCC10|330 Xuan Thuy|Cong ty co phanl Telecommunication|Access Point Wifi
