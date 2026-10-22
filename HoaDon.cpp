@@ -10,7 +10,76 @@
 
 using namespace std;
 
+class hoadonnhap : public Entity{
+    protected:
+        string ten;
+        string mancc;
+        string ngaylap;
+        double soluong;
+        double dongia;
+    public:
+        double getsoluong() const {return soluong;}
+        double getdongia() const {return dongia;}
 
+
+        void Nhap() override {
+            string temp;
+            cout << "MA hoa don:" ;
+            getline(cin,ma);
+            cout <<"Ten hoa don:"; getline(cin,ten);
+            cout <<"Ngay lap:"; getline(cin,ngaylap);
+            cout << "Ma NCC:"; getline(cin,mancc);
+            cout <<"So luong:"; getline(cin,temp); soluong=stod(temp);
+            cout << "Don gia:"; getline(cin,temp); dongia=stoi(temp);
+            
+        }
+
+        void Capnhat() override {
+            ten = NhapChucapnhat("Sua ten hoa don:", ten);
+            ngaylap= NhapChucapnhat("Sua ngay lap:", ngaylap);
+            mancc = NhapChucapnhat("Sua Ma NCC:", mancc);
+            soluong= NhapSocapnhat("Sua tong tien:", soluong);
+            dongia = NhapSocapnhat("Sua don gia:", dongia);
+        }
+        
+        string toFile() const override  {
+            return ma + "|" + ten + "|" + ngaylap +"|" + mancc + "|" + to_string((long long)soluong) +"|" + to_string(dongia); 
+        }
+
+        void fromFile(const string& line) override {
+            stringstream ss(line);
+            string t;
+            getline(ss,ma,'|');
+            getline(ss,ten,'|');
+            getline(ss,ngaylap,'|');
+            getline(ss,mancc,'|');
+            getline(ss,t,'|'); soluong=stoi(t);
+            getline(ss,t,'|'); dongia=stod(t);
+        }
+        
+        void xuat() const override  {
+            cout << fixed << setprecision(0) << left << setw(10) << ma << "| " << setw(20) 
+            << ten <<"| " << setw(20) << ngaylap << "| "
+            << setw(20) << soluong << "| " << setw(20)
+            <<dongia << "| " << setw(20) << getsoluong()*getdongia() << endl;
+        }
+
+        void xuatchitiet(Repository<Nhacungcap>& khoncc ){
+            cout << "Hoa Don:" << ten << "\n" << "(MA:" << ma << ")\n";
+
+
+            shared_ptr<Nhacungcap> da = khoncc.findById(mancc);
+
+            if(da != nullptr){
+                cout << "---hoa don nhap tu nha cung cap ---\n";
+                da-> xuat();
+            }
+            else{
+                cout <<"khong tim thay hoa don nhap tu nha cung cap vat tu co ma:" << mancc << "trong he thong\n";
+            }
+        }
+
+};
 
 class hoadonxuat : public Entity{
     private:
