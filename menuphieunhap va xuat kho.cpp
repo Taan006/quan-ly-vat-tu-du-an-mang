@@ -42,9 +42,16 @@ void menuphieunhap(Repository<phieunhap>& repopn, Repository<Vattu>& repovt){
                 cout << "-> Lap phieu thanh cong ! Da cong so vao kho.\n";
             }
             else if(choice == 3 ){
-                string ma; cout << "Nhap ma PN can xoa: "; getline(cin, ma);
-                repopn.remove(ma);
+                string ma; cout << "Nhap ma PN can sua : "; getline(cin, ma);
+               shared_ptr<phieunhap> pn = repopn.finById(ma);
+                if(pn){
+                    pn-> Capnhat();
+                    repopn.Savetofile();
+                    cout<<"Capnhatthanhcong.!\n";
             }
+                esle{
+                    cout << "Khong tim thay phieu nhap co ma:" << ma << "trong he thong\n";
+                    }
             else if(choice == 4){
                 string ma; cout << "Nhap Ma Phieu De Xoa:"; getline(cin,ma);
                 shared_ptr<phieunhap> pn = repopn.findById(ma);
@@ -90,8 +97,16 @@ void menuphieuxuat(Repository<phieuxuat>& repopx , Repository<Vattu>& repovt){
                 cout << "-> Lap phieu thanh cong! Da tru so luong kho.\n";
             }
             else if(choice == 3){
-                string ma; cout << "Nhap ma PX can xoa : "; getline(cin,ma);
-                repopx.remove(ma);
+               string ma; cout << "Nhap ma PX can sua : "; getline(cin, ma);
+               shared_ptr<phieuxuat> px = repopx.finById(ma);
+                if(px){
+                    px-> Capnhat();
+                    repopx.Savetofile();
+                    cout<<"Capnhatthanhcong.!\n";
+            }
+                esle{
+                    cout << "Khong tim thay phieu xuat co ma:" << ma << "trong he thong\n";
+                    }
             }
             else if(choice == 4){
                 string ma; cout << "Nhap ma Phieu Xuat de xoa:"; getline(cin,ma);
