@@ -20,7 +20,7 @@ void menuVattu(Repository<Vattu>& repoVT, Repository<Nhacungcap>& repoNCC){
 		choice = NhapSoMenu();
 		try{
 			if(choice == 1) {
-				cout << "Ma VT | Ten VT | Don gia | So luong | Don vi \n"
+				cout << "Ma VT | Ten VT | Don gia | So luong | Don vi | Ma NCC \n"
 				<< string(80,'-') << endl;
 				repoVT.displayall();
 			} else if (choice == 2){
