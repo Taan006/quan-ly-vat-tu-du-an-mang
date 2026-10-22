@@ -1,0 +1,10 @@
+HD001|Hoa don nhap cap quang|10/10/2026|NCC01|100|14500
+HD002|Hoa don nhap cap dong truc|11/10/2026|NCC02|200|10000
+HD003|Hoa don nhap cap quang|12/10/2026|NCC01|50|6000
+HD004|Hoa don nhap cap dien Nguon cap thiet bi |13/10/2026|NCC03|300|3000
+HD005|Hoa don nhap cap dong truc|14/10/2026|NCC02|150|14500
+HD006|Hoa don nhap dau mang RJ45|15/10/2026|NCC04|80|250000
+HD007|Hoa don nhap cap quang|16/10/2026|NCC01|15|700000
+PN008|Hoa don nhap cap nguon thiet bi|17/10/2026|NCC03|20|1000000
+PN009|Hoa don nhap hop phoi quang|18/10/2026|NCC05|90|6000
+PN010|Hoa don nhap cap dong truc|19/10/2026|NCC02|40|800000
