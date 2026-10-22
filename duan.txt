@@ -1,0 +1,10 @@
+PROJ001|Thiet ke va bao tri mang LAN cho truong TH Nguyen Trai|06/09/2026|06/11/2026|Dang hoat dong
+PROJ002|Trien khai he thong quan ly thu vien dien tu|10/10/2026|25/10/2026|Tam dung
+PROJ003|Nang cap duong truyen Internet cho khu noi tru|10/10/2026|22/10/2026|Dang hoat dong
+PROJ004|Lap dat he thong may chieu cho 20 phong hoc|01/11/2026|30/11/2026|Chua bat dau
+PROJ005|Bao tri va sua chua he thong mang truong THPT Tran Phu|18/10/2026|18/11/2026|Chua bat dau
+PROJ006|Lap dat he thong camera giam sat phong hoc|15/09/2026|15/10/2026|Dang hoat dong
+PROJ007|Lap dat he thong Call Center cho trung tam cham soc KH|01/11/2026|30/11/2026|Chua bat dau
+PROJ008|Thay anten wifi cho tiem internet|18/10/2026|19/10/2026|Hoan thanh
+PROJ009|Nang cap he thong vien thong cho cong ty ABC |13/10/2026|21/10/2026| Hoan thanh
+PROJ010|Keo day mang them cho phong tro|30/10/2026|30/10/2026|Chua bat dau

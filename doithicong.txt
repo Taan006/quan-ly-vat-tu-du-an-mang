@@ -1,0 +1,10 @@
+Group001|Nguyen Trai|6|PROJ001|
+Group002|Thanh Xuan Bac|3|PROJ002|
+Group003|Trieu Khuc|3|PROJ003|
+Group004|Tran Phu|4|PROJ005|
+Group005|Yen Xa|2|PROJ008|
+Group006|Nguyen Xien|2|PROJ004|
+Group007|Khuat Duy Tien|2|PROJ006|
+Group008|Thuong Dinh|2|PROJ007|
+Group009|Ngoc Truc|4|PROJ010|
+Group010|To Huu|1|PROJ009|
