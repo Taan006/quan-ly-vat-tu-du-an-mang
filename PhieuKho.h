@@ -14,21 +14,21 @@ class PhieuKho : public Entity{
         string ngaylap;
         string maDT;
         string maVT;    
-        double soluong;
+        int soluong;
         double dongia;
     public:
         string getmaVT() const {return maVT;}
         double getsoluong() const {return soluong;}
 
         void nhapphieukho(string doitac){
-            string temp;
+          
             cout << "MA phieu: "; 
             getline(cin,ma);
             cout << "Ngay lap: "; getline(cin,ngaylap);
             cout << doitac << ": " ;getline(cin,maDT);
             cout <<"Ma VT: ";getline(cin,maVT);
-            cout << "So luong: "; getline(cin,temp); soluong=stoi(temp);
-            cout <<"Don gia: "; getline(cin,temp); dongia=stod(temp);
+            soluong = (int)NhapSo("So luong: ");
+            dongia = (longlong)NhapSo("Don gia: ");
 
         }
         void capnhatphieukho(string doitac){
