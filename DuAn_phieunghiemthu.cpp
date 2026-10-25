@@ -17,16 +17,16 @@ class DuAn : public Entity {
         void Nhap() override {
             cout << "MA DA :" ; getline(cin,ma);
             cout << "Ten DA:" ; getline(cin,ten);
-            cout << "Ngay bat dau:" ; getline(cin,ngaybatdau);
-            cout << "Ngay ket thuc:" ; getline(cin,ngayketthuc);
-            cout << "Trang thai:"; getline(cin,trangthai);
+            ngaybatdau=NhapNgay("Ngay bat dau :");
+            ngayketthuc=NhapNgay("Ngay ket thuc :");
+            cout << "Trang thai:"; getline(cin, trangthai);
         }
 
         void Capnhat() override {
-            ten = NhapChucapnhat("Sua ten DA",ten);
-            ngaybatdau = NhapChucapnhat("Sua ngay bat dau",ngaybatdau);
-            ngayketthuc = NhapChucapnhat("Sua ngay ket thuc",ngayketthuc);
-            trangthai = NhapChucapnhat("Sua trang thai",trangthai);
+            ten = NhapChucapnhat("Sua ten DA", ten);
+            ngaybatdau = NhapChucapnhat("Sua ngay bat dau", ngaybatdau);
+            ngayketthuc = NhapChucapnhat("Sua ngay ket thuc", ngayketthuc);
+            trangthai = NhapChucapnhat("Sua trang thai", trangthai);
 
         
         }
