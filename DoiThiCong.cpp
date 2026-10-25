@@ -20,7 +20,7 @@ class doithicong : public Entity {
                 string temp;
                 cout << "MA Doi thi cong :" ; getline(cin,ma);
                 cout << "Ten doi thi cong:";getline(cin,ten);
-                cout << "So luong nhan cong: "; getline(cin,temp); soluong=stoi(temp);
+                soluong = (int)NhapSo("So luong nhan cong: ");
                 cout << "MA DA dang thi cong:"; getline(cin,maDA);
             }
 
