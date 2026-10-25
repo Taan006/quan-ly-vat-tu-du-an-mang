@@ -59,15 +59,15 @@ class Vattu : public Entity{
 			string temp;
 			cout << "MA VT:" ; getline(cin,ma);
             cout << "Ten VT:" ; getline(cin, ten);
-            cout << "Don gia:"; getline(cin, temp); dongia = stod(temp);
-            cout << "so luong:"; getline(cin, temp); soluong = stoi(temp);
+            dongia = (long long)NhapSo("Don gia: ");
+			soluong = (int)NhapSo("So luon: ");
             cout << "Don Vi:" ; getline(cin, donvi);
             cout << "MA NCC:" ; getline(cin, maNCC);
 		}
 		
 		void Capnhat() override{
 			ten = NhapChucapnhat("Sua ten VT", ten);
-            dongia = NhapSocapnhat("Sua don gia", dongia);
+            dongia = (long long)NhapSocapnhat("Sua don gia", dongia);
             soluong = (int)NhapSocapnhat("Sua so luong", soluong);
             donvi = NhapChucapnhat("Sua don vi:", donvi);
             maNCC = NhapChucapnhat("Sua ma NCC:", maNCC);
