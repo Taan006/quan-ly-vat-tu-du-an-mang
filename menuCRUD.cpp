@@ -32,7 +32,8 @@ void menuCRUD(Repository<T>& repo , string title , string headers){
                 cout << "Them thanh cong !\n";
             }
             else if(choice == 3){
-                string ma; cout << "Nhap ma:" ; getline(cin,ma);
+                string ma; 
+                cout << "Nhap ma:" ; getline(cin,ma);
                 shared_ptr<T> obj = repo.findById(ma);
                 if(obj) {
                     obj -> Capnhat();
