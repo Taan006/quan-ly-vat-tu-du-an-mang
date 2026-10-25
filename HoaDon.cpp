@@ -15,10 +15,10 @@ class hoadonnhap : public Entity{
         string ten;
         string mancc;
         string ngaylap;
-        double soluong;
+        int soluong;
         double dongia;
     public:
-        double getsoluong() const {return soluong;}
+        int getsoluong() const {return soluong;}
         double getdongia() const {return dongia;}
 
 
@@ -29,8 +29,8 @@ class hoadonnhap : public Entity{
             cout <<"Ten hoa don:"; getline(cin,ten);
             cout <<"Ngay lap:"; getline(cin,ngaylap);
             cout << "Ma NCC:"; getline(cin,mancc);
-            cout <<"So luong:"; getline(cin,temp); soluong=stod(temp);
-            cout << "Don gia:"; getline(cin,temp); dongia=stoi(temp);
+            soluong =(int)Nhapso("so luong: ");
+            dongia = (long long)Nhapso("don gia: ");
             
         }
 
