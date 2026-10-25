@@ -31,13 +31,19 @@ void menudoithicong(Repository<doithicong>& repoDTC, Repository<DuAn>& repoDA) {
                 cout << "Them thanh cong!\n";
             }
             else if(choice == 3) {
-                string ma; cout << "Nhap Ma DTC can sua: "; getline(cin, ma);
+                string ma; 
+                cout << "Nhap Ma DTC can sua: "; getline(cin, ma);
                 shared_ptr<doithicong> dtc = repoDTC.findById(ma);
-                if(dtc) { dtc->Capnhat(); repoDTC.SaveToFile(); cout << "Sua thanh cong\n"; }
+                if(dtc) { 
+                    dtc->Capnhat(); 
+                    repoDTC.SaveToFile(); 
+                    cout << "Sua thanh cong\n"; 
+                }
                 else cout << "Khong tim thay DTC!\n";
             }
             else if(choice == 4) {
-                string ma; cout << "Nhap ma DTC can xoa: "; getline(cin, ma);
+                string ma; 
+                cout << "Nhap ma DTC can xoa: "; getline(cin, ma);
                 repoDTC.remove(ma);
             }
             else if(choice == 5) { 
@@ -50,6 +56,9 @@ void menudoithicong(Repository<doithicong>& repoDTC, Repository<DuAn>& repoDA) {
                 }
                 else cout << "Khong tim thay doi thi cong!\n";
             }
-        } catch(exception& e) { cout << "Loi: " << e.what() << endl; }
-    } while(choice != 0);
+        } catch(exception& e) { 
+            cout << "Loi: " << e.what() << endl; 
+        }
+    } 
+        while(choice != 0);
 }
