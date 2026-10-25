@@ -56,7 +56,6 @@ class Vattu : public Entity{
 		void setsoluong(int sl1) {soluong = sl1;
 		}
 		void Nhap() override{
-			string temp;
 			cout << "MA VT:" ; getline(cin,ma);
             cout << "Ten VT:" ; getline(cin, ten);
             dongia = (long long)NhapSo("Don gia: ");
