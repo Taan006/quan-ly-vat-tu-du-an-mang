@@ -81,12 +81,14 @@ class hoadonnhap : public Entity{
 
 };
 
+
+
 class hoadonxuat : public Entity{
     private:
         string ten;
         string mavt;
         string ngaylap;
-        double soluong;
+        int soluong;
         double dongia;
     public:
         double getsoluong() const {return soluong;}
@@ -98,9 +100,8 @@ class hoadonxuat : public Entity{
             cout << "Ten hoa don:"; getline(cin,ten);
             cout << "Ngay lap:"; getline(cin,ngaylap);
             cout << "Ma VT:"; getline(cin,mavt);
-            cout << "So luong:"; getline(cin,temp); soluong=stoi(temp);
-            cout << "Don gia:"; getline(cin,temp); dongia=stod(temp);
-
+            dongia = (long long)NhapSo("Don gia: ");
+            soluong = (int)NhapSo("So luong: ");
         }
 
         void Capnhat() override{
@@ -153,7 +154,7 @@ class hoadonnhancong : public Entity{
         string ten;
         string ngaylap;
         string madtc;
-        double soluong;
+        int soluong;
         double dongia;
     public:
 
@@ -166,8 +167,8 @@ class hoadonnhancong : public Entity{
             cout << "Ten hoa don:"; getline(cin,ten);
             cout << "Ngay lap:";    getline(cin,ngaylap);
             cout << "Ma DTC:" ;     getline(cin,madtc);
-            cout << "So luong:";    getline(cin,temp); soluong=stoi(temp);
-            cout << "Don gia:";     getline(cin,temp); dongia=stod(temp);
+            soluong = (int)NhapSo("So luong: ");
+            dongia = (long long)NhapSo("Don gia: ");
         }
         void Capnhat() override {
             ten = NhapChucapnhat("Sua ten:", ten);
@@ -195,7 +196,7 @@ class hoadonnhancong : public Entity{
         void xuat() const override {
             cout << fixed << setprecision(0) <<left << setw(10) << ma <<"| " << setw(20) << ten << "| "
             << setw(20) << ngaylap << "| " << setw(20) << soluong << "| "
-            << setw(20) << dongia << "| " << getsoluong()*getdongia(); 
+            << setw(20) << dongia << "| " << getsoluong()*getdongia() << endl; 
         }
 
         void xuatchitiet(Repository<doithicong>& khothicong){
@@ -211,6 +212,5 @@ class hoadonnhancong : public Entity{
                 cout << " khong tim thay hoa don nhan cong cua doi thi cong co ma:" << madtc << " trong he thong\n";
             }
         }
-
-
 };
+
