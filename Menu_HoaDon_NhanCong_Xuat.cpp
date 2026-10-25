@@ -6,7 +6,7 @@
 #include <limits>
 #include <iomanip>
 #include <memory>
-#include "Phieukho.h"
+#include "PhieuKho.h"
 #include "caclop.h"
 #include <sstream>
 #include "TienichVangoaile.h"
@@ -14,6 +14,7 @@
 using namespace std;
 
 template <class T>
+
 void menuHoaDonXuat(Repository<hoadonxuat>& repoHDX, Repository<Vattu>& repoVT) {
     int choice;
     do {
@@ -50,9 +51,9 @@ void menuHoaDonXuat(Repository<hoadonxuat>& repoHDX, Repository<Vattu>& repoVT) 
                 string ma; cout << "Nhap Ma HD de xem chi tiet: "; getline(cin, ma);
                 shared_ptr<hoadonxuat> hdx = repoHDX.findById(ma);
                 if(hdx) {
-                    cout << string(50, '=') << endl;
+                    cout << string(80, '=') << endl;
                     hdx->xuatchitiet(repoVT); 
-                    cout << string(50, '=') << endl;
+                    cout << string(80, '=') << endl;
                 } else cout << "Khong tim thay hoa don!\n";
             }
         } catch(exception& e) { cout << "Loi: " << e.what() << endl; }
@@ -95,13 +96,12 @@ void menuHoaDonNhanCong(Repository<hoadonnhancong>& repoHDNC, Repository<doithic
                 string ma; cout << "Nhap Ma HD de xem chi tiet: "; getline(cin, ma);
                 shared_ptr<hoadonnhancong> hdnc = repoHDNC.findById(ma);
                 if(hdnc) {
-                    cout << string(50, '=') << endl;
+                    cout << string(80, '=') << endl;
                     hdnc->xuatchitiet(repoDTC);
-                    cout << string(50, '=') << endl;
+                    cout << string(80, '=') << endl;
                 } else cout << "Khong tim thay hoa don!\n";
             }
         } catch(exception& e) { cout << "Loi: " << e.what() << endl; }
     } while(choice != 0);
 }
 
-}
