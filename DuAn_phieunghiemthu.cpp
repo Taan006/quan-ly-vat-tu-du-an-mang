@@ -63,14 +63,14 @@ class phieunghiemthu : public Entity {
         void Nhap() override {
             cout << "MA Phieu Nghiem Thu:" ; getline(cin,ma);
             cout << "Ten Phieu Nghiem Thu:"; getline(cin,ten);
-            cout << "Ngay Lap Phieu :"; getline(cin,ngaylap);
+            ngaylap=NhapNgay("Ngay lap phieu :");
             cout << "Ma DA nghiem thu :"; getline(cin,maDA);
             cout << "Danh Gia DA:"; getline(cin,danhgia);
         }
-        
+
         void Capnhat() override{
             ten = NhapChucapnhat("Sua ten phieu nghiem thu:", ten);
-            ngaylap= NhapChucapnhat("Sua ngay lap phieu:", ngaylap);
+            ngaylap= NhapNgayCapnhat("Sua ngay lap phieu:", ngaylap);
             maDA = NhapChucapnhat("Sua ma DA nghiem thu:", maDA);
             danhgia = NhapChucapnhat("Sua danh gia:", danhgia);
 
