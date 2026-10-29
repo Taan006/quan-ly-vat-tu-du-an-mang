@@ -25,7 +25,7 @@ void menuphieunhap(Repository<phieunhap>& repopn, Repository<Vattu>& repovt){
         try{
             if(choice == 1){
                 cout << "Ma PN  | Ngay lap   | MA NCC    | MA VT    | So luong  | Don gia   |\n"
-                << string(80,'-') << endl;
+                << string(100,'-') << endl;
                 repopn.displayall();
             
             }
@@ -78,7 +78,7 @@ void menuphieuxuat(Repository<phieuxuat>& repopx , Repository<Vattu>& repovt){
         try{
             if(choice == 1){
                 cout << "MA PX  | Ngay lap   | MA DA   | MA VT  | So luong   | Don gia \n"
-                << string(80,'-') << endl;
+                << string(100,'-') << endl;
                 repopx.displayall();
 
             }
