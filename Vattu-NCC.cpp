@@ -50,7 +50,7 @@ class Vattu : public Entity{
 	private:
 		string ten, donvi, maNCC;
 		int soluong;
-		double dongia;
+		long long dongia;
 	public:
 		int getsoluong() const {return soluong;}
 		void setsoluong(int sl1) {soluong = sl1;
@@ -82,7 +82,7 @@ class Vattu : public Entity{
 		}
 		
 		string toFile() const override{
-			return ma + "|" + ten + "|" + to_string((long long)dongia) + "|" + to_string(soluong) + "|" + donvi + "|" + maNCC;
+			return ma + "|" + ten + "|" + to_string(dongia) + "|" + to_string(soluong) + "|" + donvi + "|" + maNCC;
 		}
 		
 		void fromFile(const string& line) override{
@@ -90,7 +90,7 @@ class Vattu : public Entity{
 			string t;
 			getline(ss, ma, '|');
             getline(ss, ten, '|');
-            getline(ss, t, '|'); dongia=stod(t);
+            getline(ss, t, '|'); dongia=stoll(t);
             getline(ss, t, '|'); soluong=stoi(t);
             getline(ss, donvi,'|');
             getline(ss, maNCC,'|');
