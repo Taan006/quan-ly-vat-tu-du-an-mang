@@ -24,13 +24,13 @@ inline string NhapChucapnhat(const string& prompt , const string& oldval){
 
 }
 
-inline double NhapSo(const string& prompt) {
+inline  long long NhapSo(const string& prompt) {
     string input;
     while (true) {
         cout << prompt;
         getline(cin, input);
         try {
-            double val = stod(input);
+            long long val = stoll(input);
             if (val <= 0) {
                 throw ValidationException("Gia tri khong the la so am!");
             }
@@ -45,7 +45,7 @@ inline double NhapSo(const string& prompt) {
     }
 }
 
-inline double NhapSocapnhat(const string& prompt, double oldval) {
+inline long long NhapSocapnhat(const string& prompt, double oldval) {
     string input;
     while (true) {
         cout << prompt << " (Cu: " << oldval << " - Nhan Enter de giu nguyen) ";
@@ -54,7 +54,7 @@ inline double NhapSocapnhat(const string& prompt, double oldval) {
             return oldval;
         }
         try {
-            double newval = stod(input);
+            long long newval = stod(input);
             if (newval <= 0) {
                 throw ValidationException("Gia tri khong the la so am!");
             }
@@ -82,3 +82,66 @@ inline int NhapSoMenu() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     return luaChon;
 }
+
+inline bool laNamNhuan(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+inline void kiemTraNgayHopLe(const string& dateStr) {
+
+    if (dateStr.length() != 10 || dateStr[2] != '/' || dateStr[5] != '/') {
+        throw ValidationException("Dinh dang ngay phai la DD/MM/YYYY (Vi du: 19/10/2026)!");
+    }
+
+    int d, m, y;
+    char c1, c2;
+    stringstream ss(dateStr);
+
+    if (!(ss >> d >> c1 >> m >> c2 >> y) || c1 != '/' || c2 != '/') {
+        throw ValidationException("Ngay thang nam phai la cac con so!");
+    }
+
+    if (m < 1 || m > 12) {
+        throw ValidationException("Thang phai nam trong khoang tu 1 den 12!");
+    }
+
+
+    int maxDays[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (m == 2 && laNamNhuan(y)) maxDays[2] = 29;
+
+    if (d < 1 || d > maxDays[m]) {
+        throw ValidationException("Thang " + to_string(m) + " nam " + to_string(y) + 
+                                  " chi co " + to_string(maxDays[m]) + " ngay!");
+    }
+}
+
+inline string NhapNgay(const string& prompt) {
+    string input;
+    while (true) {
+        cout << prompt;
+        getline(cin, input);
+        try {
+            kiemTraNgayHopLe(input);
+            return input; // Nhập đúng thì trả về
+        } catch (const ValidationException& e) {
+            cout << "[Loi Ngay Thang] " << e.what() << " Vui long nhap lai!\n";
+        }
+    }
+}
+
+inline string NhapNgayCapNhat(const string& prompt, const string& oldval) {
+    string input;
+    while (true) {
+        cout << prompt << " (Cu: " << oldval << " - Nhan Enter de giu nguyen): ";
+        getline(cin, input);
+        if (input.empty()) return oldval;
+        try {
+            kiemTraNgayHopLe(input);
+            return input;
+        } catch (const ValidationException& e) {
+            cout << "[Loi Ngay Thang] " << e.what() << " Vui long nhap lai!\n";
+        }
+    }
+}
+
+
