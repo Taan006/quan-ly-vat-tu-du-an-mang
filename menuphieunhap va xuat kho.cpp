@@ -24,8 +24,9 @@ void menuphieunhap(Repository<phieunhap>& repopn, Repository<Vattu>& repovt){
 
         try{
             if(choice == 1){
-                cout << "Ma PN  | Ngay lap   | MA NCC    | MA VT    | So luong  | Don gia   |\n"
-                << string(100,'-') << endl;
+               cout << left << setw(10) << "MA Phieu" << "| " << setw(15) << "Ngay Lap" << "| " 
+                << setw(10) << "Ma NCC" << "| " << setw(20) << "MA VT" << "| " << setw(12) 
+                << "So luong" << "| " << setw(15) << "Don gia\n" << string(90,'-')<< endl;
                 repopn.displayall();
             
             }
@@ -59,11 +60,12 @@ void menuphieunhap(Repository<phieunhap>& repopn, Repository<Vattu>& repovt){
                     shared_ptr<Vattu> vt = repovt.findById(pn->getmaVT());
 
                     if(vt) {vt->setsoluong(vt->getsoluong() - pn -> getsoluong());
-                         repovt.SaveToFile();repopn.remove(ma);
+                         repovt.SaveToFile();
+                        }
+                    repopn.remove(ma);
                         
-                        }else cout << "Khong tim thay Phieu!\n";
-                     
                 }
+                else cout << "Khong tim thay Phieu!\n";
             }
         }catch (exception& e) { cout << "Loi :" << e.what() << endl;}
     }while(choice != 0);
@@ -77,8 +79,9 @@ void menuphieuxuat(Repository<phieuxuat>& repopx , Repository<Vattu>& repovt){
         choice = NhapSoMenu();
         try{
             if(choice == 1){
-                cout << "MA PX  | Ngay lap   | MA DA   | MA VT  | So luong   | Don gia \n"
-                << string(100,'-') << endl;
+                cout << left << setw(10) << "MA Phieu" << "| " << setw(15) << "Ngay Lap" << "| " 
+                << setw(10) << "Ma DA" << "| " << setw(20) << "MA VT" << "| " << setw(12) 
+                << "So luong" << "| " << setw(15) << "Don gia\n" << string(90,'-')<< endl;
                 repopx.displayall();
 
             }
