@@ -14,31 +14,34 @@
 using namespace std;
 
 template <class T>
-void menuCRUD(Repository<T>& repo , string title , string headers){
+void menuDuAn(Repository<T>& repoDA ){
     int choice;
     do {
-        cout << "\n--- QUAN LY " << title << "---\n";
+        cout << "\n--- QUAN LY DU AN " << title << "---\n";
         cout << "1. Xem danh sach\n2. Them moi\n3. Sua\n4. Xoa\n0. Quay lai\nchon:";
         choice = NhapSoMenu();
         try{
             if(choice == 1) {
-                cout << headers << endl << string(80,'-') << endl; 
-                repo.displayall();
+                cout << left << setw(10) << "MA DA" <<"| " << setw(60) << "Ten DA" <<"| " 
+                << setw(15) <<"Ngay Bat Dau" <<"| " << setw(15) << "Ngay Ket Thuc" <<"| " << setw(25) 
+                << "Trang Thai" <<"| \n" << string(150,'-') << endl;
+ 				repoDA.displayall();
             }
             else if(choice == 2){
-                shared_ptr<T> obj = make_shared<T>();
-                obj->Nhap();
-                repo.add(obj);
+                shared_ptr<DuAn> da = make_shared<DuAn>();
+                da->Nhap();
+                repoDA.add(da);
                 cout << "Them thanh cong !\n";
             }
             else if(choice == 3){
                 string ma; 
-                cout << "Nhap ma:" ; getline(cin,ma);
-                shared_ptr<T> obj = repo.findById(ma);
-                if(obj) {
-                    obj -> Capnhat();
-                    repo.SaveToFile();
-                    cout << "Sua thanh cong\n";
+                cout << "Nhap ma du an can sua:" ;
+                getline(cin,ma);
+                shared_ptr<DuAn> da = repoDA.findById(ma);
+                if(da) {
+                    da -> Capnhat();
+                    repoDA.SaveToFile();
+                    cout << "Sua thanh cong!"<< endl;
                 }
                 else{
                     cout << "Khong tim thay ! \n";
@@ -46,8 +49,10 @@ void menuCRUD(Repository<T>& repo , string title , string headers){
             }
             else if(choice == 4){
                 string ma ;
-                cout << "Nhap ma :"; getline(cin,ma);
-                repo.remove(ma);
+                cout << "Nhap ma du an can xoa:"; 
+                getline(cin,ma);
+                repoDA.remove(ma);
+                cout << "Xoa thanh cong!\n";
             }
         }catch(exception& e) {
             cout << "Loi :" << e.what() << endl;
