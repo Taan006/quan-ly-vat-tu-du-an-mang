@@ -28,10 +28,18 @@ void menuDuAn(Repository<T>& repoDA ){
  				repoDA.displayall();
             }
             else if(choice == 2){
-                shared_ptr<DuAn> da = make_shared<DuAn>();
-                da->Nhap();
-                repoDA.add(da);
-                cout << "Them thanh cong !\n";
+                while (true) {
+                    try {
+                        shared_ptr<Vattu> vt = make_shared<Vattu>();
+                        vt->Nhap();
+                    
+                        repoVT.add(vt);
+                        cout << "Them thanh cong!\n";
+                        break; 
+                    } catch(const exception& e) {
+                        cout << "[Loi] " << e.what() << " Vui long nhap lai!\n";
+                    }
+                }
             }
             else if(choice == 3){
                 string ma; 
