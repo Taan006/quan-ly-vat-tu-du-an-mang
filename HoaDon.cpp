@@ -89,16 +89,16 @@ class hoadonxuat : public Entity{
         string mavt;
         string ngaylap;
         int soluong;
-        double dongia;
+        long long  dongia;
     public:
-        double getsoluong() const {return soluong;}
-        double getdongia() const {return dongia;}
+        int  getsoluong() const {return soluong;}
+        long long  getdongia() const {return dongia;}
 
         void Nhap() override{
             string temp;
             cout << "MA hoa don:";getline(cin,ma);
             cout << "Ten hoa don:"; getline(cin,ten);
-            cout << "Ngay lap:"; getline(cin,ngaylap);
+            ngaylap= NhapNgayCapNhat("Sua ngay lap:", ngaylap);
             cout << "Ma VT:"; getline(cin,mavt);
             dongia = (long long)NhapSo("Don gia: ");
             soluong = (int)NhapSo("So luong: ");
@@ -106,7 +106,7 @@ class hoadonxuat : public Entity{
 
         void Capnhat() override{
             ten = NhapChucapnhat("Sua ten hoa don:", ten);
-            ngaylap = NhapChucapnhat("Sua ngay lap:", ngaylap);
+            ngaylap= NhapNgayCapNhat("Sua ngay lap:", ngaylap);
             mavt = NhapChucapnhat("Sua ma vt:", mavt);
             soluong = NhapSocapnhat("Sua so luong:", soluong);
             dongia = NhapSocapnhat("Sua don gia:", dongia);
@@ -125,7 +125,7 @@ class hoadonxuat : public Entity{
             getline(ss,ngaylap,'|');
             getline(ss,mavt,'|');
             getline(ss,t,'|'); soluong=stoi(t);
-            getline(ss,t,'|'); dongia=stod(t);
+            getline(ss,t,'|'); dongia=stoll(t);
         }
         
         void xuat() const override {
@@ -155,24 +155,24 @@ class hoadonnhancong : public Entity{
         string ngaylap;
         string madtc;
         int soluong;
-        double dongia;
+        long long dongia;
     public:
 
-        double getsoluong() const{return soluong;}
-        double getdongia() const {return dongia;} 
+        int getsoluong() const{return soluong;}
+        long long getdongia() const {return dongia;} 
 
         void Nhap() override {
             string temp;    
             cout << "Ma hoa don:";  getline(cin,ma);
             cout << "Ten hoa don:"; getline(cin,ten);
-            cout << "Ngay lap:";    getline(cin,ngaylap);
+            ngaylap= NhapNgayCapNhat("Sua ngay lap:", ngaylap);
             cout << "Ma DTC:" ;     getline(cin,madtc);
             soluong = (int)NhapSo("So luong: ");
             dongia = (long long)NhapSo("Don gia: ");
         }
         void Capnhat() override {
             ten = NhapChucapnhat("Sua ten:", ten);
-            ngaylap = NhapChucapnhat("Sua ngay lap:", ngaylap);
+            ngaylap= NhapNgayCapNhat("Sua ngay lap:", ngaylap);
             madtc = NhapChucapnhat("Sua Ma DTC:", madtc);
             soluong = NhapSocapnhat("Sua so luong:", soluong);
             dongia = NhapSocapnhat("Sua don gia:", dongia);
@@ -190,7 +190,7 @@ class hoadonnhancong : public Entity{
             getline(ss,ngaylap,'|');
             getline(ss,madtc,'|');
             getline(ss,t,'|'); soluong=stoi(t);
-            getline(ss,t,'|'); dongia=stod(t);
+            getline(ss,t,'|'); dongia=stoll(t);
         }
 
         void xuat() const override {
