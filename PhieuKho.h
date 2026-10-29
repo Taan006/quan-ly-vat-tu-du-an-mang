@@ -24,7 +24,7 @@ class PhieuKho : public Entity{
           
             cout << "MA phieu: "; 
             getline(cin,ma);
-            cout << "Ngay lap: "; getline(cin,ngaylap);
+            ngaylap=NhapNgay("Ngay lap phieu: ");
             cout << doitac << ": " ;getline(cin,maDT);
             cout <<"Ma VT: ";getline(cin,maVT);
             soluong = (int)NhapSo("So luong: ");
@@ -32,15 +32,15 @@ class PhieuKho : public Entity{
 
         }
         void capnhatphieukho(string doitac){
-            ngaylap = NhapChucapnhat("Sua ngay lap:", ngaylap);
-            maDT = NhapChucapnhat("Sua" + doitac,maDT);
-            dongia = NhapSocapnhat("Sua don gia:", dongia);
+            ngaylap = NhapNgaycapnhat("Sua ngay lap:", ngaylap);
+            maDT = NhapChucapnhat("Sua" + doitac + ":",maDT);
+            dongia = (long long)NhapSocapnhat("Sua don gia:", dongia);
             cout << "[!] Luu y: Khong cho phep sua ma VT va Soluong VT.Hay xoa phieu nay neu nhap sai !\n";
 
         }
         string basetoFile() const {
             return ma + "|" + ngaylap + "|" + maDT + "|" + maVT +"|"
-            + to_string(soluong) + "|" + to_string((long long )dongia);
+            + to_string(soluong) + "|" + to_string(dongia);
         }
         void basefromFile(const string& line){
             stringstream ss(line);
@@ -50,7 +50,7 @@ class PhieuKho : public Entity{
             getline(ss,maDT,'|');
             getline(ss,maVT,'|');
             getline(ss,t,'|'); soluong=stoi(t);
-            getline(ss,t,'|'); dongia=stod(t);
+            getline(ss,t,'|'); dongia=stoll(t);
 
         }
         void xuatphieukho() const{
